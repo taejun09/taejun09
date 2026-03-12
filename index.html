@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <title>KIM TAEJUN · Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="https://taejun09.github.io/kimtaejun/assets/image/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="https://taejun09.github.io/kimtaejun/assets/image/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/image/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://taejun09.github.io/kimtaejun/assets/image/apple-touch-icon.png" />
+  <link rel="manifest" href="https://taejun09.github.io/kimtaejun/assets/image/site.webmanifest" />
+  <style>
+    .tossface {
+      font-family: Tossface;
+      font-size: 1.7rem;
+    }
+  </style>
+</head>
+
+<body class="bg-[#121212] text-gray-200 overflow-x-hidden">
+
+
+  <header class="bg-[#1e1e1e] rounded-2xl border border-gray-700 p-4 mx-4 mt-4 flex items-center justify-between md:mx-auto md:max-w-7xl md:px-10 md:py-6 shadow-lg">
+     <h1 class="text-xl md:text-3xl font-bold text-white flex items-center">
+    <span class="tossface text-2xl mr-2">#️⃣</span>
+    KIM TAEJUN
+  </h1>
+    
+<button id="menu-btn" class="block md:hidden">
+  <svg id="hamburger-icon" class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" 
+       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" 
+          d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+  <svg id="close-icon" class="w-6 h-6 text-white hidden" fill="none" stroke="currentColor" stroke-width="2" 
+       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" 
+          d="M6 18L18 6M6 6l12 12"></path>
+  </svg>
+</button>
+
+    <nav class="hidden md:flex md:gap-8 text-gray-300 font-semibold md:text-lg">
+      <a href="#" class="hover:text-blue-400">프로젝트</a>
+      <a href="#" class="hover:text-blue-400">프로필</a>
+    </nav>
+  </header>
+
+  <div id="mobile-menu" class="hidden md:hidden mx-4 mt-2 bg-[#1e1e1e] rounded-xl shadow-md p-4">
+    <a href="#" class="block py-1 text-gray-300 hover:text-blue-400">프로젝트</a>
+    <a href="#" class="block py-1 text-gray-300 hover:text-blue-400">프로필</a>
+  </div>
+
+<section id="section1"
+  class="w-full h-[40vh] md:h-[80vh] mt-6 px-4 md:px-0 md:mx-auto md:max-w-7xl rounded-2xl overflow-hidden shadow-lg relative">
+  <img src="/assets/image/taejun.png" alt="섹션 1 이미지" class="w-full h-full object-cover rounded-2xl" />
+  <a id="smooth-link"
+     href="#"
+     class="absolute bottom-4 right-5 bg-slate-700 hover:bg-slate-600 text-white text-sm md:text-base font-semibold py-2 px-4 md:px-6 rounded-xl shadow-md transition-all">
+    자세히 보기 →
+  </a>
+</section>
+
+
+
+<footer class="bg-[#1e1e1e] text-center py-4 mt-6">
+  <p class="text-gray-400 text-sm">
+    © 2026 KIM TAEJUN. All Rights Reserved. Designed & Developed by KIM TAEJUN.
+  </p>
+</footer>
+
+<div id="transition-spinner" class="fixed inset-0 flex items-center justify-center bg-[#121212] bg-opacity-90 opacity-0 pointer-events-none transition-opacity duration-500 z-50">
+  <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-400 border-opacity-60"></div>
+</div>
+
+
+<script>
+document.getElementById("smooth-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    const link = this.href;
+
+    const spinner = document.getElementById("transition-spinner");
+    spinner.classList.remove("opacity-0", "pointer-events-none");
+    spinner.classList.add("opacity-100");
+
+    document.body.style.transition = "opacity 0.5s";
+    document.body.style.opacity = 0.5;
+
+    setTimeout(() => {
+      window.location.href = link;
+    }, 800);
+  });
+
+document.getElementById('menu-btn').addEventListener('click', function() {
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  hamburgerIcon.classList.toggle('hidden');
+  closeIcon.classList.toggle('hidden');
+  
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('hidden');
+});
+  </script>
+
+<script>
+  console.log(`%c
+   _____   ___   _____    ___  _   _  _   _ 
+  |_   _| / _ \ |  ___|  |_  || | | || \ | |
+    | |  / /_\ \| |__      | || | | ||  \| |
+    | |  |  _  ||  __|     | || | | || . ' |
+    | |  | | | || |___ /\__/ /| |_| || |\  |
+    \_/  \_| |_/\____/ \____/  \___/ \_| \_/
+  `, "color: #5dbcea; font-weight: bold; font-family: monospace; font-size: 12px;");
+
+  console.log("%c© 2025 KIM TAEJUN. All Rights Reserved. Designed & Developed by KIM TAEJUN. ", "color: #0984e3; font-weight: bold; font-size: 14px;");
+</script>
+
+
+</body>
+</html>
+        
+
